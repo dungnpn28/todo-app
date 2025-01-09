@@ -1,7 +1,7 @@
 import { Todo } from '../../interface/Todo';
 import './TodoCard.css';
 
-const TodoCard= ({title, description, status, onStatusChange}: Todo) => {
+const TodoCard= ({title, description, status, onStatusChange, onDelete}: Todo) => {
     return (
         <div className={`todo-card ${status ? 'completed' : 'incomplete'}`}>
             <h3 className="todo-card-title">{title}</h3>
@@ -15,6 +15,12 @@ const TodoCard= ({title, description, status, onStatusChange}: Todo) => {
                 />
                 Completed
             </label>
+            <button 
+                className="todo-card-delete"
+                onClick={onDelete}
+            >
+                Delete
+            </button>
         </div>
     );
 };
